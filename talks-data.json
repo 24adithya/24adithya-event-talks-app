@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Opening Keynote: The Future of AI in Software Engineering",
+    "speakers": ["Dr. Anya Sharma"],
+    "categories": ["AI", "Keynote", "Future Tech"],
+    "duration": 60,
+    "description": "An insightful look into how artificial intelligence is shaping the landscape of software development and what to expect in the coming years."
+  },
+  {
+    "title": "Practical Microservices with Node.js",
+    "speakers": ["Ben Carter", "Dr. Lena Petrova"],
+    "categories": ["Backend", "Microservices", "Node.js"],
+    "duration": 60,
+    "description": "Learn how to design, build, and deploy scalable microservices using Node.js and best practices."
+  },
+  {
+    "title": "Mastering Modern CSS Layouts",
+    "speakers": ["Chloe Davis"],
+    "categories": ["Frontend", "CSS", "UI/UX"],
+    "duration": 60,
+    "description": "Dive deep into CSS Grid and Flexbox to create stunning and responsive layouts with ease."
+  },
+  {
+    "title": "Introduction to WebAssembly",
+    "speakers": ["David Lee"],
+    "categories": ["WebAssembly", "Performance", "Frontend"],
+    "duration": 60,
+    "description": "Explore the basics of WebAssembly and how it can bring near-native performance to web applications."
+  },
+  {
+    "title": "Secure Coding Practices for Web Applications",
+    "speakers": ["Eva Green"],
+    "categories": ["Security", "Web Development", "Best Practices"],
+    "duration": 60,
+    "description": "Understand common web vulnerabilities and learn how to implement secure coding practices to protect your applications."
+  },
+  {
+    "title": "DevOps Beyond the Basics: CI/CD with Kubernetes",
+    "speakers": ["Frank White", "Grace Hall"],
+    "categories": ["DevOps", "Kubernetes", "CI/CD"],
+    "duration": 60,
+    "description": "Elevate your DevOps game with advanced CI/CD pipelines integrated with Kubernetes for seamless deployments."
+  }
+]

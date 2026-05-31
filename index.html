@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Talks Event Schedule</title>
+    <style>
+        
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.search-container {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#categorySearch {
+    padding: 12px 15px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#categorySearch::placeholder {
+    color: #aaa;
+}
+
+.schedule-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.talk-item, .break-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.talk-item:last-child, .break-item:last-child {
+    border-bottom: none;
+}
+
+.talk-item:hover:not(.filtered-out) {
+    background-color: #f9f9f9;
+}
+
+.talk-time {
+    flex: 0 0 120px;
+    font-weight: bold;
+    color: #3498db;
+    font-size: 1.1em;
+}
+
+.talk-details {
+    flex: 1;
+}
+
+.talk-details h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.talk-details .speakers {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.talk-details .categories {
+    margin-top: 10px;
+}
+
+.talk-details .category-tag {
+    display: inline-block;
+    background-color: #e0e6ea;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.talk-details p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+.break-item {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.break-item .break-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+}
+
+.break-item .talk-time {
+    color: #2c3e50;
+}
+
+.filtered-out {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+    .talk-item, .break-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .talk-time {
+        margin-bottom: 10px;
+        flex: none;
+        width: 100%;
+    }
+    .break-item .break-title {
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Technical Talks Event</h1>
+        <p>A day full of insightful talks</p>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="categorySearch" placeholder="Search talks by category...">
+        </div>
+
+        <div id="schedule" class="schedule-container">
+            <!-- Schedule items will be dynamically loaded here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Technical Talks Event. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.fullSchedule = [
+  {
+    "title": "Opening Keynote: The Future of AI in Software Engineering",
+    "speakers": [
+      "Dr. Anya Sharma"
+    ],
+    "categories": [
+      "AI",
+      "Keynote",
+      "Future Tech"
+    ],
+    "duration": 60,
+    "description": "An insightful look into how artificial intelligence is shaping the landscape of software development and what to expect in the coming years.",
+    "startTime": "10:00 AM",
+    "endTime": "11:00 AM"
+  },
+  {
+    "title": "Practical Microservices with Node.js",
+    "speakers": [
+      "Ben Carter",
+      "Dr. Lena Petrova"
+    ],
+    "categories": [
+      "Backend",
+      "Microservices",
+      "Node.js"
+    ],
+    "duration": 60,
+    "description": "Learn how to design, build, and deploy scalable microservices using Node.js and best practices.",
+    "startTime": "11:10 AM",
+    "endTime": "12:10 PM"
+  },
+  {
+    "title": "Mastering Modern CSS Layouts",
+    "speakers": [
+      "Chloe Davis"
+    ],
+    "categories": [
+      "Frontend",
+      "CSS",
+      "UI/UX"
+    ],
+    "duration": 60,
+    "description": "Dive deep into CSS Grid and Flexbox to create stunning and responsive layouts with ease.",
+    "startTime": "12:20 PM",
+    "endTime": "01:20 PM"
+  },
+  {
+    "title": "Lunch Break",
+    "isBreak": true,
+    "startTime": "01:30 PM",
+    "endTime": "02:30 PM",
+    "description": "Enjoy a delicious lunch!"
+  },
+  {
+    "title": "Introduction to WebAssembly",
+    "speakers": [
+      "David Lee"
+    ],
+    "categories": [
+      "WebAssembly",
+      "Performance",
+      "Frontend"
+    ],
+    "duration": 60,
+    "description": "Explore the basics of WebAssembly and how it can bring near-native performance to web applications.",
+    "startTime": "02:40 PM",
+    "endTime": "03:40 PM"
+  },
+  {
+    "title": "Secure Coding Practices for Web Applications",
+    "speakers": [
+      "Eva Green"
+    ],
+    "categories": [
+      "Security",
+      "Web Development",
+      "Best Practices"
+    ],
+    "duration": 60,
+    "description": "Understand common web vulnerabilities and learn how to implement secure coding practices to protect your applications.",
+    "startTime": "03:50 PM",
+    "endTime": "04:50 PM"
+  },
+  {
+    "title": "DevOps Beyond the Basics: CI/CD with Kubernetes",
+    "speakers": [
+      "Frank White",
+      "Grace Hall"
+    ],
+    "categories": [
+      "DevOps",
+      "Kubernetes",
+      "CI/CD"
+    ],
+    "duration": 60,
+    "description": "Elevate your DevOps game with advanced CI/CD pipelines integrated with Kubernetes for seamless deployments.",
+    "startTime": "05:00 PM",
+    "endTime": "06:00 PM"
+  }
+];
+        
+document.addEventListener('DOMContentLoaded', () => {
+    const talksData = window.fullSchedule; // Access the globally defined data
+    const scheduleContainer = document.getElementById('schedule');
+    const categorySearchInput = document.getElementById('categorySearch');
+
+    function renderSchedule(talksToRender) {
+        scheduleContainer.innerHTML = ''; // Clear previous schedule
+
+        talksToRender.forEach(item => {
+            const itemElement = document.createElement('div');
+            if (item.isBreak) {
+                itemElement.classList.add('break-item');
+                itemElement.innerHTML = '<div class="talk-time">' + item.startTime + ' - ' + item.endTime + '</div>' +
+                                        '<div class="break-title">' + item.title + '</div>';
+            } else {
+                itemElement.classList.add('talk-item');
+                const speakersHtml = item.speakers.map(speaker => '<span>' + speaker + '</span>').join(', ');
+                const categoriesHtml = item.categories.map(category => '<span class="category-tag">' + category + '</span>').join('');
+                itemElement.innerHTML = '<div class="talk-time">' + item.startTime + ' - ' + item.endTime + '</div>' +
+                                        '<div class="talk-details">' +
+                                            '<h2>' + item.title + '</h2>' +
+                                            '<div class="speakers">' + speakersHtml + '</div>' +
+                                            '<p>' + item.description + '</p>' +
+                                            '<div class="categories">' + categoriesHtml + '</div>' +
+                                        '</div>';
+            }
+            scheduleContainer.appendChild(itemElement);
+        });
+    }
+
+    // Initial render
+    renderSchedule(talksData);
+
+    // Search functionality
+    categorySearchInput.addEventListener('input', (event) => {
+        const searchTerm = event.target.value.toLowerCase().trim();
+        const filteredSchedule = talksData.filter(item => {
+            if (item.isBreak) return true; // Always show breaks
+            return item.categories.some(category => category.toLowerCase().includes(searchTerm));
+        });
+        renderSchedule(filteredSchedule);
+    });
+});
+
+    </script>
+</body>
+</html>
